@@ -14,7 +14,11 @@ public class Dollar {
 
     @Override
     public boolean equals(Object obj) {
-        Dollar dollar = (Dollar) obj;
-        return this.amount == dollar.amount ;
+        if (obj.getClass() == this.getClass()) {
+            Dollar dollar = (Dollar) obj;
+            return (this.amount == dollar.amount);
+        }
+
+        return false;
     }
 }
