@@ -7,9 +7,9 @@ public class FrancTest {
 
     @Test
     public void testMultiplication() {
-        Franc five = new Franc(5);
-        Assert.assertEquals(new Franc(10), five.times(2));
-        Assert.assertEquals(new Franc(15), five.times(3));
+        Money five = Money.franc(5);
+        Assert.assertEquals(Money.franc(10), five.times(2));
+        Assert.assertEquals(Money.franc(15), five.times(3));
     }
 
 }
