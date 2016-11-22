@@ -1,6 +1,6 @@
 package net.marcioguimaraes.wycash.model;
 
-public abstract class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -22,16 +22,20 @@ public abstract class Money {
         return this.currency;
     }
 
-    abstract public Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(this.amount * multiplier, currency);
+    }
 
     @Override
     public boolean equals(Object obj) {
-        if (this.getClass().equals(obj.getClass())) {
-            Money money = (Money) obj;
-            return (this.amount == money.amount);
-        }
+        Money money = (Money) obj;
+        return (this.amount == money.amount
+                && money.currency.equals(this.currency));
+    }
 
-        return false;
+    @Override
+    public String toString() {
+        return this.amount + " " + this.currency;
     }
 
 }
