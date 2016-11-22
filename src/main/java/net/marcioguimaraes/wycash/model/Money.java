@@ -3,16 +3,19 @@ package net.marcioguimaraes.wycash.model;
 public abstract class Money {
 
     protected int amount;
+    protected String currency;
 
     public static Money dollar(int amount) {
-        return new Dollar(amount);
+        return new Dollar(amount, "USD");
     }
 
     public static Money franc(int amount) {
-        return new Franc(amount);
+        return new Franc(amount, "CHF");
     }
 
-    abstract public String currency();
+    public String currency() {
+        return this.currency;
+    }
 
     abstract public Money times(int multiplier);
 

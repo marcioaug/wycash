@@ -2,18 +2,14 @@ package net.marcioguimaraes.wycash.model;
 
 public class Franc extends Money {
 
-    public Franc(int amount) {
+    public Franc(int amount, String currency) {
         this.amount = amount;
-    }
-
-    @Override
-    public String currency() {
-        return "CHF";
+        this.currency = currency;
     }
 
     @Override
     public Money times(int multiplier) {
-        return new Franc(this.amount * multiplier);
+        return Money.franc(this.amount * multiplier);
     }
 
 }
