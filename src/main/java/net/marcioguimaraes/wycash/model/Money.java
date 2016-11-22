@@ -26,6 +26,10 @@ public class Money {
         return new Money(this.amount * multiplier, currency);
     }
 
+    public Money plus(Money addend) {
+        return new Money(this.amount + addend.amount, currency);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj.getClass().equals(this.getClass())) {
