@@ -2,8 +2,8 @@ package net.marcioguimaraes.wycash.model;
 
 public class Money {
 
-    protected int amount;
-    protected String currency;
+    private int amount;
+    private String currency;
 
     public Money(int amount, String currency) {
         this.amount = amount;
@@ -11,11 +11,11 @@ public class Money {
     }
 
     public static Money dollar(int amount) {
-        return new Dollar(amount, "USD");
+        return new Money(amount, "USD");
     }
 
     public static Money franc(int amount) {
-        return new Franc(amount, "CHF");
+        return new Money(amount, "CHF");
     }
 
     public String currency() {
@@ -28,9 +28,14 @@ public class Money {
 
     @Override
     public boolean equals(Object obj) {
-        Money money = (Money) obj;
-        return (this.amount == money.amount
-                && money.currency.equals(this.currency));
+        if (obj.getClass().equals(this.getClass())) {
+            Money money = (Money) obj;
+            return (this.amount == money.amount
+                    && money.currency.equals(this.currency));
+
+        }
+
+        return false;
     }
 
     @Override
