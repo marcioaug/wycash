@@ -1,7 +1,7 @@
-package net.marcioguimaraes;
+package net.marcioguimaraes.wycash.model;
 
-import net.marcioguimaraes.wycash.model.Dollar;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class DollarTest {
 
