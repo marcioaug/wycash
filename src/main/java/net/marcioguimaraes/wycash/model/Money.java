@@ -1,6 +1,6 @@
 package net.marcioguimaraes.wycash.model;
 
-public class Money {
+public class Money implements Expression {
 
     private int amount;
     private String currency;
