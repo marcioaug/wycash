@@ -1,9 +1,11 @@
 package net.marcioguimaraes.wycash.model;
 
+import net.marcioguimaraes.wycash.expression.Expression;
+
 public class Bank {
 
-    public Money reduce(Expression expression, String currency) {
-        return Money.dollar(10);
+    public Money reduce(Expression source, String to) {
+        return source.reduce(to);
     }
 
 }

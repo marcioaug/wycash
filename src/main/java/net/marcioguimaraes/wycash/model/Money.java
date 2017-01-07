@@ -1,8 +1,11 @@
 package net.marcioguimaraes.wycash.model;
 
+import net.marcioguimaraes.wycash.expression.Expression;
+import net.marcioguimaraes.wycash.expression.Sum;
+
 public class Money implements Expression {
 
-    private int amount;
+    public int amount;
     private String currency;
 
     public Money(int amount, String currency) {
@@ -26,8 +29,12 @@ public class Money implements Expression {
         return new Money(this.amount * multiplier, currency);
     }
 
-    public Money plus(Money addend) {
-        return new Money(this.amount + addend.amount, currency);
+    public Expression plus(Money addend) {
+        return new Sum(this, addend);
+    }
+
+    public Money reduce(String to) {
+        return this;
     }
 
     @Override

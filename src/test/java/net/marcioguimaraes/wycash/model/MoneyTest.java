@@ -1,5 +1,6 @@
 package net.marcioguimaraes.wycash.model;
 
+import net.marcioguimaraes.wycash.expression.Expression;
 import org.junit.Assert;
 import org.junit.Test;
 
