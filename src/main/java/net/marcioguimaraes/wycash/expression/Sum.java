@@ -1,5 +1,6 @@
 package net.marcioguimaraes.wycash.expression;
 
+import net.marcioguimaraes.wycash.model.Bank;
 import net.marcioguimaraes.wycash.model.Money;
 
 public class Sum implements Expression {
@@ -12,7 +13,7 @@ public class Sum implements Expression {
         this.addend = addend;
     }
 
-    public Money reduce(String to) {
+    public Money reduce(Bank bank, String to) {
         return new Money(this.augend.amount + this.addend.amount, to);
     }
 
